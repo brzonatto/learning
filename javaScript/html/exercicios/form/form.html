@@ -1,0 +1,53 @@
+<form action="http://localhost:3003/usuarios" method="POST">
+    <input type="hidden" name="id" value="3">
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo"> Ativo
+    </div>
+    <div>
+        <select name="estado">
+            <option>Selecione</option>
+            <option value="rs">RS</option>
+            <option value="sc">SC</option>
+            <option value="pr">PR</option>
+        </select>
+
+        <select name="interesses" multiple size="5">
+            <option value="js">JS</option>
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+            <option value="python">Python</option>
+            <option value="c">C</option>
+            <option value="c#">C#</option>
+        </select>
+    </div>
+    <button formaction="http://localhost:3003/usuarios">Outro incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Outro incluir 2</button>
+    <button>Incluir</button>
+</form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type=radio] {
+        display: inline;
+    }
+
+    input[type=checkbox] {
+        display: inline;
+    }
+
+    
+</style>
