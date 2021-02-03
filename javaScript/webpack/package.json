@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,12 @@
     "webpack": "",
     "webpack-cli": "",
     "css-loader": "",
-    "style-loader": ""
+    "style-loader": "",
+    "mini-css-extract-plugin": "",
+    "node-sass": "",
+    "sass-loader": "",
+    "cross-env": "",
+    "optimize-css-assets-webpack-plugin": "",
+    "terser-webpack-plugin": ""
   }
 }
