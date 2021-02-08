@@ -11,6 +11,11 @@ module.exports = {
         filename: 'principal.js',
         path: __dirname + '/public'
     },
+    devServer: {
+        contentBase: "./public",
+        compress: true,
+        port: 8080,
+    },
     optimization: {
         minimizer: [
             new TerserPlugin({
@@ -33,9 +38,19 @@ module.exports = {
             use: [
                 MiniCssExtractPlugin.loader,
                 // 'style-loader', // Adiciona CSS a DOM injetando a tag <style>
-                'css-loader', // interpreta @import, url()...
-                'sass-loader'
+                { loader: "css-loader", options: { url: true } }, // interpreta @import, url()...
+                "sass-loader"
             ]
+        }, {
+            test: /\.(png|jpg|gif|svg)$/,
+            use: {
+                loader: "file-loader",
+                options: {
+                    publicPath: "imgs/",
+                    name: "[name].[hash].[ext]",
+                    outputPath: "imgs"
+                }
+            }
         }]
     }
 }
