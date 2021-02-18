@@ -19,7 +19,21 @@
             { nome: 'Carlos', nota: 7.6 },
             { nome: 'Julia', nota: 9.7 }
         ]
-        
-        // ...
+
+        $(function () {
+            const gerarTabela = () => {
+                const linhas = pessoas.map(pessoa => {
+                    const tdNome = $('<td>').html(pessoa.nome)
+                    const tdNota = $('<td>').html(pessoa.nota)
+
+                    return $('<tr>').append(tdNome).append(tdNota)
+                })
+
+                const tabela = $('<table>').append(linhas).css('border', 'solid 5px')
+
+                $('#conteudo').append(tabela)
+            }
+            gerarTabela()
+        })
     </script>
 </body>
